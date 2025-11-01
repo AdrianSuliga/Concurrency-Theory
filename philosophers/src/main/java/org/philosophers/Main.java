@@ -19,7 +19,7 @@ public class Main {
         simulation.simulate();
          */
 
-        /* Generate graph for average times for all variant 6 philosophers
+        /* Generate graph for average times for all variant 6 philosophers, graph generation assumes Ns to be 5, 10, 15 or 20
         GraphGenerator graph = new GraphGenerator();
 
         for (int i = 5; i < 21; i += 5) {
