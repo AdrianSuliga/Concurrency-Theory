@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 public class PhilosopherV2 extends PhilosopherBase {
-    private static final String BASE_DIR = "src/main/resources/version2/";
+    public static final String BASE_DIR = "src/main/resources/version2/";
 
     public PhilosopherV2(Fork left, Fork right, int id, String filename) {
         super(left, right, id, BASE_DIR + filename);

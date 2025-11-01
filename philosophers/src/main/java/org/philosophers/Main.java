@@ -7,6 +7,7 @@ import org.philosophers.model.PhilosopherV4;
 import org.philosophers.model.PhilosopherV5;
 import org.philosophers.model.PhilosopherV6;
 import org.philosophers.simulation.*;
+import org.philosophers.utils.GraphGenerator;
 
 public class Main {
     public static void main() {
@@ -18,6 +19,16 @@ public class Main {
         simulation.simulate();
          */
 
+        /* Generate graph for average times for all variant 6 philosophers
+        GraphGenerator graph = new GraphGenerator();
 
+        for (int i = 5; i < 21; i += 5) {
+            graph.generateForNPhilosophers(PhilosopherV6.BASE_DIR, i);
+        }
+        */
+
+        /* Generate summary graph for all variants */
+        GraphGenerator graph = new GraphGenerator();
+        graph.generateForAllVariants();
     }
 }

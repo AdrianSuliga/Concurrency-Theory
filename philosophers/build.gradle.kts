@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jfree:jfreechart:1.5.5")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

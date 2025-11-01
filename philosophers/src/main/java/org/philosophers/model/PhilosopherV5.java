@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 public class PhilosopherV5 extends PhilosopherBase {
-    private static final String BASE_DIR = "src/main/resources/version5/";
+    public static final String BASE_DIR = "src/main/resources/version5/";
     private final Waiter waiter;
 
     public PhilosopherV5(Fork left, Fork right, int id, String filename, Waiter waiter) {
