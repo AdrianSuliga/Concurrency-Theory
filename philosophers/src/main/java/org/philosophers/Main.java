@@ -16,18 +16,16 @@ public class Main {
         int N = 20;
 
         var simulation = new Simulation<>(N, PhilosopherV6.class);
-        simulation.simulate();
-         */
+        simulation.simulate();*/
 
-        /* Generate graph for average times for all variant 6 philosophers, graph generation assumes Ns to be 5, 10, 15 or 20
+        /* Generate graph for average times for all variant 6 philosophers
         GraphGenerator graph = new GraphGenerator();
 
         for (int i = 5; i < 21; i += 5) {
             graph.generateForNPhilosophers(PhilosopherV6.BASE_DIR, i);
-        }
-        */
+        }*/
 
-        /* Generate summary graph for all variants */
+        /* Generate summary graph for all variants graph generation assumes Ns to be 5, 10, 15 or 20 for this function*/
         GraphGenerator graph = new GraphGenerator();
         graph.generateForAllVariants();
     }

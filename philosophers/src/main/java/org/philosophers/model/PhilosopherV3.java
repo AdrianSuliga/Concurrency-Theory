@@ -19,7 +19,7 @@ public class PhilosopherV3 extends PhilosopherBase {
             System.out.println("Philosopher " + this.id + " lifted right fork (" + this.right.getId() + ")");
 
             left.lift();
-            System.out.println("Philosopher" + this.id + " lifted left fork (" + this.left.getId() + ")");
+            System.out.println("Philosopher " + this.id + " lifted left fork (" + this.left.getId() + ")");
         } else {
             left.lift();
             System.out.println("Philosopher " + this.id + " lifted left fork (" + this.left.getId() + ")");
