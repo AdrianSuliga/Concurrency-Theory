@@ -138,3 +138,11 @@ fabric.properties
 hs_err_pid*
 replay_pid*
 
+__pycache__/
+bin/
+include/
+lib/
+share/
+pyvenv.cfg
+lib64
+
