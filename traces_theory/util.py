@@ -75,7 +75,7 @@ def get_dependent_transactions(transactions: dict[str, list[str]]) -> set[tuple[
 # input - set: dependent transactions, result of get_dependent_transactions
 #       - list: alphabet, result of get_alphabet
 # output - dict: dependent transactions without redundant entries (symbol -> set of symbols)
-def get_dependencies(dependent:set[tuple[str, str]], alphabet:list[str]) -> dict[set[str]]:
+def get_dependencies(dependent:set[tuple[str, str]], alphabet:list[str]) -> dict[str, set[str]]:
     result = {}
 
     for transaction in alphabet:
@@ -103,7 +103,7 @@ def get_trans(trans_dict: dict[str, list[int]]) -> list[str]:
 #       - str: word to calculate fnf for
 #       - list: alphabet, result of get_alphabet
 # output - list: fnf for given word
-def fnf_calculation(dependencies: dict[set[str]], word: str, alphabet: list[str]) -> list:
+def fnf_calculation(dependencies: dict[set[str]], word: str, alphabet: list[str]) -> list[list[str]]:
     trans_dict = {}
     for transaction in alphabet:
         trans_dict[transaction] = []
@@ -167,4 +167,3 @@ def get_graph(dependencies:dict[set[str]], word: str) -> tuple[nx.DiGraph, dict[
         labels[f"{word[i]}{i}"] = word[i]
 
     return G, positions, labels
-

@@ -3,8 +3,8 @@ import networkx as nx
 import sys
 import util
 
-def main():
-    if (len(sys.argv)) != 4:
+def main() -> None:
+    if len(sys.argv) != 4:
         print("Unexpected number of arguments. Expected format is:")
         print("python3 main.py <transaction_file> <alphabet_file> <word>")
         sys.exit(0)
@@ -53,9 +53,8 @@ def main():
     G, positions, labels = util.get_graph(dependencies, word)
     plt.figure(num = f"Graf zależności dla słowa {word}")
     nx.draw(G, positions, labels = labels, with_labels = True,
-            node_size = 600)
+            node_size = 600, connectionstyle = "arc3, rad = 0.20")
     plt.show()
-
 
 if __name__ == "__main__":
     main()
