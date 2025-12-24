@@ -3,9 +3,9 @@ import utils
 
 def main() -> int:
     # Weryfikacja poprawności wywołania programu
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         print("Nieprawidłowa liczba argumentów. Oczekiwane wywołanie programu:")
-        print("python3 main.py <ścieżka do pliku z danymi>")
+        print("python3 main.py <ścieżka do pliku z danymi> <ścieżka do pliku z wynikiem>")
         sys.exit(1)
 
     # Wydobycie danych z pliku tekstowego
@@ -75,6 +75,19 @@ def main() -> int:
     # Rozwiązanie 
     print("\nTransponowany wektor rozwiązań")
     print(results)
+
+    # Zapis rozwiązania w postaci akceptowanej 
+    # przez sprawdzarkę
+    with open(sys.argv[2], "w") as f:
+        s = str(n) + "\n"
+        for row in eliminated_matrix:
+            for i in range(len(row) - 1):
+                s += str(row[i]) + " "
+            s += "\n"
+        for element in results:
+            s += str(element) + " "
+        s += "\n"
+        f.write(s)
 
     return 0
 
