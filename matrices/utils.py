@@ -2,8 +2,13 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import threading
 
+# Globalny słownik, mnożniki obliczane na
+# potrzeby odejmowania wierszy
 mki = {}
-nki = {}
+
+# Globalny słownik, wartości pomnożone przez
+# mnożniki na potrzeby odejmowania wierszy
+nkij = {}
 
 # Zadanie A, obliczenie mnożnika
 def A(M: list[list[float]], i: int, k: int) -> None:
@@ -11,11 +16,11 @@ def A(M: list[list[float]], i: int, k: int) -> None:
 
 # Zadanie B, obliczenie pomnożonej wartości
 def B(M: list[list[float]], i: int, j: int, k: int) -> None:
-    nki[f"{k}_{i}_{j}"] = M[i - 1][j - 1] * mki[f"{k}_{i}"]
+    nkij[f"{k}_{i}_{j}"] = M[i - 1][j - 1] * mki[f"{k}_{i}"]
 
 # Zadanie C, wyzerowanie komórki
 def C(M: list[list[float]], i: int, j: int, k: int) -> None:
-    M[k - 1][j - 1] -= nki[f"{k}_{i}_{j}"]
+    M[k - 1][j - 1] -= nkij[f"{k}_{i}_{j}"]
 
 # Algorytm eliminacji Gaussa wykonany współbieżnie dzięki
 # postaci normalnej Foaty
@@ -234,7 +239,7 @@ def get_fnf(n: int) -> list[list[dict]]:
     return fnf
 
 # Wyznaczenie grafu i jego kolorów
-def draw_graph(dependent: list[tuple[dict, dict]], fnf: list[list[dict]]):
+def draw_graph(dependent: list[tuple[dict, dict]], fnf: list[list[dict]]) -> None:
     G = nx.DiGraph()
 
     node_colors = ["lime", "orange", "cyan", "pink"]
@@ -261,6 +266,6 @@ def draw_graph(dependent: list[tuple[dict, dict]], fnf: list[list[dict]]):
         G.add_edge(node1, node2)
 
     plt.figure(num = f"Graf zależności Diekerta wraz z kolorowaniem")
-    nx.draw(G, positions, node_color = colors, node_size = 1200)
-    nx.draw_networkx_labels(G, positions, font_size = 8)
+    nx.draw(G, positions, node_color = colors, width = 4, node_size = 5200)
+    nx.draw_networkx_labels(G, positions, font_size = 16)
     plt.show()
